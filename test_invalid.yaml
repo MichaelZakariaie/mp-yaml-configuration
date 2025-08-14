@@ -1,0 +1,10 @@
+cohort: "wrong_type_should_be_int"
+task: "LL"
+# missing required task_variation field
+
+input_feature_columns:
+  - range:
+      start: feature_000
+      # missing required 'end' field
+
+unknown_field: "this should trigger a warning"

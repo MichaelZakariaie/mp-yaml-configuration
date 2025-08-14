@@ -1,0 +1,20 @@
+cohort: 5
+task: "LL"
+task_variation: "scene_pairs"
+
+input_feature_columns:
+  - range:
+      start: feature_000
+      end: feature_100
+  - feature_101
+  - 42  # numeric index
+
+output_feature_columns:
+  - accuracy
+  - reaction_time
+
+irrelevant_to_ml_models_columns:
+  - session_id
+  - timestamp
+
+cohort_description: "Test cohort with scene pair comparisons"
