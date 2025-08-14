@@ -4,6 +4,13 @@ This repository maintains the template and validation tools for cohort configura
 
 ## 🚀 Quick Start for New Users
 
+### Prerequisites
+
+Install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+
 ### What You Need to Know
 
 1. **`template.yaml`** - The current template you should reference when creating your YAML files
@@ -38,7 +45,7 @@ If you need to modify `template.yaml`:
 
 1. **Install pre-commit hooks (one-time setup):**
    ```bash
-   pip install pre-commit
+   pip install -r requirements.txt  # If not already done
    pre-commit install
    ```
 
