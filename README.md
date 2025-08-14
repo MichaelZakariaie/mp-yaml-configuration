@@ -24,11 +24,13 @@ pip install -r requirements.txt
    cat template.yaml
    ```
 
-2. **Create your YAML based on the template:**
+2. **Create your YAML based on the example:**
    ```bash
    cp example.yaml my_cohort_config.yaml
    # Edit my_cohort_config.yaml with your values
    ```
+   
+   💡 **Tip**: We recommend copying `example.yaml` rather than `template.yaml` because it contains real values you can modify, while template.yaml has placeholders like `<int>` and `<string>`.
 
 3. **Validate your YAML:**
    ```bash
@@ -155,7 +157,7 @@ The validator performs these checks:
 ### Example Valid YAML
 
 ```yaml
-cohort: 5
+cohort: "cohort_5"
 task: "LL"
 task_variation: "scene_pairs"
 
@@ -180,7 +182,7 @@ cohort_description: "Cohort 5 with scene pair comparisons"
 
 ### Required Fields
 
-- `cohort`: Integer cohort identifier
+- `cohort`: String cohort identifier (e.g., "cohort_5", "pilot_study_A")
 - `task`: String task type (e.g., "LL", "MAB")
 - `task_variation`: String variation name (keep consistent across cohorts)
 

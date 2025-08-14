@@ -138,8 +138,8 @@ class YAMLValidator:
             self.warnings.append(f"Unknown fields found: {', '.join(unknown_fields)}")
         
         # Validate specific constraints
-        if 'cohort' in data and isinstance(data['cohort'], int) and data['cohort'] < 0:
-            self.errors.append("Field 'cohort': Must be a positive integer")
+        if 'cohort' in data and not isinstance(data['cohort'], str):
+            self.errors.append("Field 'cohort': Must be a string")
         
         return len(self.errors) == 0, self.errors, self.warnings
 

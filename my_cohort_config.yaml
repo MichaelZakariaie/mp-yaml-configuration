@@ -15,7 +15,7 @@
 # - Example: session_id is often irrelevant to model training.
 # ============================
 
-cohort: "cohort_5"
+cohort: 5
 task: MAB
 task_variation: scene_pairs
 
