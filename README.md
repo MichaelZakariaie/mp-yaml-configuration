@@ -7,8 +7,24 @@ This repository maintains the template and validation tools for cohort configura
 ### Prerequisites
 
 Install the required Python packages:
+
+**Option 1 - Virtual Environment (Recommended):**
 ```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+**Option 2 - User Install:**
+```bash
+pip install --user -r requirements.txt
+# or
+pip3 install --user -r requirements.txt
+```
+
+**Option 3 - macOS with Homebrew:**
+```bash
+brew install pyyaml
 ```
 
 ### What You Need to Know
