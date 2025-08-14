@@ -1,0 +1,40 @@
+# ============================
+# Cohort Config Usage Guide
+# ============================
+# - This file defines which columns belong to inputs, outputs, and irrelevant sets for ML.
+# - Columns can be listed as:
+#     1) A name (e.g. "feature_001")
+#     2) A numeric index (e.g. 42)
+#     3) A range:
+#         range:
+#           start: feature_000   # or index number
+#           end: feature_500     # or index number
+# - Use names when possible for clarity, indexes if names are unstable.
+# - Keep task_variation naming consistent across cohorts to allow auto-merging in pipelines.
+# - "irrelevant_to_ml_models_columns" are columns to keep in the dataset but exclude from ML input features.
+# - Example: session_id is often irrelevant to model training.
+# ============================
+
+cohort: <int>  # e.g. 5
+task: <string>  # e.g. LL, MAB
+task_variation: <string>  # e.g. scene_pairs, face_pairs (consistent naming)
+
+input_feature_columns:
+  - range:
+      start: <column_name_or_index>
+      end: <column_name_or_index>
+  - <column_name_or_index>
+
+output_feature_columns:
+  - range:
+      start: <column_name_or_index>
+      end: <column_name_or_index>
+  - <column_name_or_index>
+
+irrelevant_to_ml_models_columns:
+  - <column_name_or_index>
+  - range:
+      start: <column_name_or_index>
+      end: <column_name_or_index>
+
+cohort_description: <string>  # text explaining cohort details, file splits, etc.

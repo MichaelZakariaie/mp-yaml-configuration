@@ -1,0 +1,46 @@
+# ============================
+# Cohort Config Usage Guide
+# ============================
+# - This file defines which columns belong to inputs, outputs, and irrelevant sets for ML.
+# - Columns can be listed as:
+#     1) A name (e.g. "feature_001")
+#     2) A numeric index (e.g. 42)
+#     3) A range:
+#         range:
+#           start: feature_000   # or index number
+#           end: feature_500     # or index number
+# - Use names when possible for clarity, indexes if names are unstable.
+# - Keep task_variation naming consistent across cohorts to allow auto-merging in pipelines.
+# - "irrelevant_to_ml_models_columns" are columns to keep in the dataset but exclude from ML input features.
+# - Example: session_id is often irrelevant to model training.
+# ============================
+
+cohort: 5
+task: MAB
+task_variation: scene_pairs
+
+input_feature_columns:
+  - range:
+      start: feature_000
+      end: feature_500
+  - range:
+      start: 501
+      end: 505
+  - extra_demographic_feature
+
+output_feature_columns:
+  - range:
+      start: survey_response_1
+      end: survey_response_5
+  - 900
+
+irrelevant_to_ml_models_columns:
+  - session_id
+  - range:
+      start: calc_temp_col_1
+      end: calc_temp_col_3
+  - 1005
+
+cohort_description: >
+  Cohort 5 includes 500 participants who completed the "scene_pairs" variation of the MAB task.
+  Another parquet file contains data for Cohort 5 participants who completed the "face_pairs" variation.
